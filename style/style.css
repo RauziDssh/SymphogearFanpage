@@ -1,0 +1,169 @@
+.rum{
+    width: auto;
+    color: #fff;
+    text-align: center;
+    align-self: center;
+    overflow:hidden;
+    align-content: center;
+}
+
+.rum:hover{
+    animation: rumble 0.07s linear infinite;
+}
+
+@keyframes rumble{
+    0%	{transform:rotate(0deg)	translate(0,0);}
+    12.5%	{transform:rotate(0.4deg)	translate(1px,-1px);}
+    25%	{transform:rotate(0.8deg)	translate(0px,1px);}
+    37.5%	{transform:rotate(0.4deg)	translate(-1px,0);}
+    50%	{transform:rotate(0deg)	translate(0,0);}
+    62.5%	{transform:rotate(-0.4deg)	translate(1px,0);}
+    75%	{transform:rotate(-0.8deg)	translate(0,1px);}
+    87.5%	{transform:rotate(-0.4deg)	translate(-1px,-1px);}
+    100%	{transform:rotate(0deg)	translate(0,0);}
+}
+
+@media (min-width: 500px)
+    .col-sm-3 {
+        width: 25%;
+        margin: 2em;
+}
+
+#centering {
+    width: auto;
+    text-align: center;
+    background-image: url(img/g.jpg);
+}
+
+#ikusaba{
+    background-color: black;
+    text-align: center;
+}
+
+#deka{
+    width: auto;
+    height: auto;
+    font-size: 60px;
+    background-color: crimson;
+    margin-bottom: 20px;
+    border-radius: 1px;
+    margin-top: 10px
+}
+
+#titlelogo{
+    width: 400px;
+    height: auto;
+    align-content: stretch;
+}
+
+.mono{
+    width: auto;
+    text-align: center;
+    align-self: center;
+    filter: grayscale(100);
+}
+
+.titles{
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.sousya{
+    width: 200px;
+    height: 700px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    -webkit-filter: grayscale(100%);
+    align-self: center;
+    align-content: center;
+}
+
+.sousya:hover{
+    padding: 0px;
+     -webkit-filter: grayscale(0%);
+}
+
+.sousya-syousai{
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+.name{
+    font-size: 30px;
+    color: white;
+    text-align: left;
+
+}
+
+.label-sousya{
+    margin-top: 5px;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    border-top: ridge;
+    border-top-width: thick;
+    border-top-color: gray;
+}
+
+.content{
+    color:white;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.word{
+    font-size: 25px;
+    font-style: italic;
+    color: white;
+}
+
+#topbar{
+    background-color: coral;
+    font-size: 25px;
+    color: white;
+    border-color: black;
+}
+
+.list-group{
+    background-color: gray;
+    color: gray;
+    border-color: gray;
+}
+
+.list-group-item{
+    background-color: black;
+    color: white;
+    text-align: left;
+    border-color: gray;
+}
+
+.navbar-default .navbar-nav > li > a {
+color: #ffffff;
+}
+
+body{
+    margin: 5px;
+}
+
+#GXnav{
+  float: left;
+  width: 256px;
+}
+
+.table{
+    color: white;
+    margin: 10px;
+}
+
+.relative{
+    position: relative;
+}
+
+#logoabsolute{
+    width: 300px;
+    position: absolute;
+    left: -10px;
+}
