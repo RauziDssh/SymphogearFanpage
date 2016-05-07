@@ -31,14 +31,19 @@
 }
 
 #centering {
+    background-color: rgba(0,0,0,0.7);
     width: auto;
     text-align: center;
-    background-image: url(img/g.jpg);
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-bottom: 100px;
 }
 
 #ikusaba{
-    background-color: black;
     text-align: center;
+    background-image: url("/img/background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 #deka{
@@ -52,14 +57,13 @@
 }
 
 #titlelogo{
-    min-width: 100px;
-    max-width:480px;
+    max-width:500px;
     align-content: center;
     text-align: center;
     vertical-align: middle; 
     margin: auto;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .mono{
