@@ -116,6 +116,13 @@
 
 }
 
+.name-big{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+
+}
+
 .label-sousya{
     margin-top: 5px;
     text-align: left;

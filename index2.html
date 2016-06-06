@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <style>
+        #scene {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 700px;
+        }
+        
+        #scene > li {
+            position: absolute;
+            height: 100%;
+            align-self: center;
+            margin: 0 auto;
+        }
+        
+        #hb {
+            position: relative;
+            width: 100%;
+            top: 20%;
+            left: 20%;
+            text-align: center;
+        }
+        
+        #lg {
+            position: relative;
+            left: 40%;
+            top: 60%;
+            text-align: center;
+        }
+        
+        #ts {
+            position: relative;
+            width: 100%;
+            left: 125%;
+            top: 10%;
+        }
+        
+        #ch {
+            position: relative;
+            width: 100%;
+            left: -40%;
+            top: 10%;
+        }        
+        .layer {
+            position: absolute;
+            min-width: 500px;
+            max-width: 1250px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body id="ikusaba">
+    <div class="container">
+        <img id="titlelogo" src="img/title.PNG" />
+        <nav class="navbar navbar-default" id="topbar">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-custom">
+                    <li><a href="./index.html">戦姫絶唱シンフォギアとは？</a></li>
+                    <li><a href="./story.html">ストーリー</a></li>
+                    <li><a href="./sousya.html">キャラクター</a></li>
+                    <li><a href="./constructing.html">ディスコグラフィー</a></li>
+                    <li><a href="https://twitter.com/symphogear?lang=ja">Twitter</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div id = "centering">
+            <ul id="scene">
+                <li class="layer" data-depth="0.70">
+                    <div id="ch"><img src="img/top/topchris.png"></div>
+                </li>
+                <li class="layer" data-depth="0.80">
+                    <div id="ts"><img src="img/top/toptsubasa.png"></div>
+                </li>
+                <li class="layer" data-depth="1.10">
+                    <div id="hb"><img src="img/top/tophibiki.png"></div>
+                </li>
+                <li class="layer" data-depth="1.20">
+                    <div id="lg"><img src="img/logo1.png"></div>
+                </li>
+            </ul>
+        </div>
+        
+        <script src="scripts/parallax.min.js"></script>
+        <script>
+            var scene = document.getElementById('scene');
+            var parallax = new Parallax(scene);
+        </script>
+
+        <!--
+        <div class="row" style="margin-left:2em;margin-right:2em;">
+                <div class="col-md-3">
+                    <div class="relative">
+                    <div class="rum">
+                        <a href="http://www.symphogear.com/">
+                            <img class="titles" src = "img/t1.PNG"/>
+                        </a>
+                        </div>
+                    </div>
+                    <img id = "logoabsolute" style = "width:200px;left:5px;bottom:50px" src = "img/logo1.png"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="relative">
+                    <div class="rum">
+                        <a href="http://www.symphogear-g.com/">
+                            <img class="titles" src = "img/t2.PNG"/>
+                        </a>
+                        </div>
+                    </div>
+                    <img id = "logoabsolute" style = "width:210px;left:5px;bottom:50px" src = "img/logo2.png"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="relative">
+                    <div class="rum">
+                        <a href="http://www.symphogear-gx.com/">
+                            <img class="titles" src = "img/t3.PNG"/>
+                        </a>
+                        </div>
+                    </div>
+                    <img id = "logoabsolute" style = "width:250px;left:5px;bottom:50px" src = "img/logo3.png"/>
+                </div>
+                <div class="col-md-3">
+                     <div class="relative" style="color:white;">
+                    <div class="rum">
+                            <img class="titles" style="-webkit-filter: grayscale(100%);" src = "img/t3.PNG"/>
+                            </div>
+                         <div id = "logoabsolute" style="width:200px;left:5px;bottom:50px">
+                                     <h1><p>4期</p><p>5期</p><p>制作決定!</p></h1>
+                                 </div>
+                    </div>
+                </div>
+        </div>
+-->
+        <div style="margin-left:3em;margin-right:3em;">
+            <div class="name">
+                戦姫絶唱シンフォギアとは
+            </div>
+            <div class="label-sousya">
+                あらすじ
+            </div>
+            <div class="content">
+                <p>
+                    『戦姫絶唱シンフォギア』（せんきぜっしょうシンフォギア）は、日本のテレビアニメ。音楽プロデューサーである上松範康が初めてテレビアニメの原作を手掛ける。2012年より長期にわたってシリーズが制作・放送されている。
+                </p>
+                <p>
+                    女子中学生の立花響は、天羽奏と風鳴翼による人気ボーカルユニット「ツヴァイウィング」のライブを楽しんでいた。だがその最中、人を飲み込み炭素に変えてしまう認定特異災害「ノイズ」が発生し、観客たちを次々と襲い始める。大混乱の会場で響が見たものは、歌を口ずさみながらプロテクターに身を包み、ノイズと戦うツヴァイウィングの2人の姿だった。まもなく逃げ遅れて重傷を負った響を救うため、奏は自らの命と引き換えに絶唱を歌い、ノイズを殲滅させる。 それから2年後、響は親友の小日向未来と共に憧れの翼のいる私立リディアン音楽院の高等科へ進学するが、街中で再びノイズと出くわしてしまう。追い詰められた響は、2年前に奏が歌っていたあの歌を口ずさむ。すると、眩い光と共に響の身体を特殊なプロテクターが包み込む。それは、ノイズに対抗する唯一の力にして奏の置き土産「シンフォギアシステム」だった。響は自身の変化に戸惑うままノイズから逃げ惑うが、そこへ現れた翼によって救出され、なし崩しに特異災害対策機動部二課へ連行される。そこで自分を取り巻く事情を知った響は、奏に代わって自らに宿ったシンフォギア「ガングニール」の装者として戦う道を選ぶ。
+                </p>
+            </div>
+            <div class="label-sousya">
+                みどころ
+            </div>
+            <div class="content">
+                <h2>歌いながら戦う</h2>
+                <p>
+                    シンフォギアでは、「歌」が最も重要なテーマのひとつである。劇中で挿入される歌には、単に場面を盛り上げるだけでなく、ストーリーに深く関わるものも存在する。そして「歌いながら戦う」という斬新なスタイルは、本作における最大の特徴であり、シリーズを通してこのスタイルが踏襲されている。
+                </p>
+                <p>
+                    これらの楽曲を手掛けるのは、水樹奈々や茅原実里といった大物アニソン歌手に楽曲を提供する上松範康率いる「Elemental Garden」のスタッフである。Elemental Gardenの幅広い分野をカバーするスタッフ陣により、シンフォギアにおける楽曲のジャンルは演歌やロック、オーケストラまで非常に多岐にわたっている。
+                </p>
+                <h2>ライブ</h2>
+                <p>
+                    歌をメインテーマとしている本作では、多くの楽曲が披露され、主要登場人物の楽曲だけでも1クールあたり10曲以上は制作される。第3期までは、各シーズンの放送終了後に「シンフォギアライブ」が開催される。劇中で歌われた数多くの楽曲がライブで歌われる。シンフォギアを視聴した諸君には是非シンフォギアライブの映像を見ていただき、来る次回のシンフォギアライブに参加することを期待する。
+                </p>
+            </div>
+            <div class="label-sousya">
+                スタッフ
+            </div>
+            <div class="container">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>原作</td>
+                            <td>
+                                <p>上松範康</p>
+                                <p>金子彰史</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>監督</td>
+                            <td>
+                                <p>伊藤達文</p>
+                                <p>小野勝巳</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>シリーズ構成</td>
+                            <td>
+                                <p>金子彰史</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>脚本</td>
+                            <td>
+                                <p>金子彰史</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>キャラクターデザイン</td>
+                            <td>
+                                <p>吉井ダン</p>
+                                <p>小池智史</p>
+                                <p>藤本さとる</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>音楽</td>
+                            <td>
+                                <p>Elements Garden</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>アニメーション制作</td>
+                            <td>
+                                <p>サテライト</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

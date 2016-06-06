@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script src="scripts/jquery.cloud9carousel.js"></script>
+    <script src="scripts/jquery.mousewheel.js"></script>
+    <script type="text/javascript">
+        $(() => {
+            $("#carousel").Cloud9Carousel({
+                xOrigin: 0
+                , xRadius: 600
+                , yOrigin: 42
+                , yRadius: 48
+                , autoPlay: 0
+                , speed: 10
+                , bringToFront: true
+                , onRendered: rendered
+                , autoPlayDelay: 1000
+                , mouseWheel: true
+            })
+            
+            function rendered(carousel){
+                $('.name-big').text(carousel.nearestItem().element.title);
+            }
+        })
+    </script>
+    <style>
+        #carousel .cloud9-item,
+        #buttons button {
+            cursor: pointer;
+        }
+        
+        #carousel {
+            align-content: center;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body id="ikusaba">
+    <div class="container" id="centering"><img id="titlelogo" src="img/title.PNG" />
+        <nav class="navbar navbar-default" id="topbar">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html">戦姫絶唱シンフォギアとは？</a></li>
+                    <li><a href="./story.html">ストーリー</a></li>
+                    <li><a href="./sousya.html">キャラクター</a></li>
+                    <li><a href="./constructing.html">ディスコグラフィー</a></li>
+                    <li><a href="https://twitter.com/symphogear?lang=ja">Twitter</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="name" id="center-border">CHARACTERS</div>
+            <!-- The carousel wrapper. -->
+            <div id="carousel">
+                <div class="cloud9-item" title="MARIA">
+                    <img src="img/maria.png" alt="MARIA">
+                </div>
+                <div class="cloud9-item" title="KIRIKA">
+                    <img src="img/kirika.png" alt="KIRIKA">
+                </div>
+                <div class="cloud9-item" title="SHIRABE">
+                    <img src="img/shirabe.png" alt="SHIRABE">
+                </div>
+                <div class="cloud9-item" title="HIBIKI">
+                    <img src="img/hibiki.png" alt="HIBIKI">
+                </div>
+                <div class="cloud9-item" title="CHRIS">
+                    <img src="img/chris.png" alt="CHRIS">
+                </div>
+                <div class="cloud9-item" title="TSUBASA">
+                    <img src="img/sakimori.png" alt="TSUBASA">
+                </div>
+                <div class="cloud9-item" title="MIKU">
+                    <img src="img/393.png" alt="MIKU">
+                </div>
+                <div class="cloud9-item" title="CAROL">
+                    <img src="img/carol.png" alt="CAROL">
+                </div>
+                <div class="cloud9-item" title="OTONA">
+                    <img src="img/otona.png" alt="OTONA">
+                </div>
+                <div class="cloud9-item" title="KANADE">
+                    <img src="img/kanade.png" alt="KANADE">
+                </div>
+                <div class="cloud9-item" title="FINE">
+                    <img src="img/fine.png" alt="FINE">
+                </div>
+                
+            </div>
+            <div id="buttons">
+                <button class="left">
+                    ←
+                </button>
+                <button class="right">
+                    →
+                </button>
+            </div>
+            <div class="container">
+                <div class = "name-big">CHARACTER NAME</div>
+            </div>
+            <!--
+                <div class="col-sm-2">
+                    <div class="rum" style="position: relative;align-content:center;">
+                        <a href="maria.html">
+                            <img class="sousya" src = "img/maria.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>MARIA</h3></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="rum">
+                        <a href="kirishira.html">
+                            <img class="sousya" src = "img/kirika.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>KIRIKA</h3></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="rum">
+                        <a href="kirishira.html">
+                            <img class="sousya" src = "img/shirabe.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>SHIRABE</h3></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="rum">
+                        <a href="hibiki.html">
+                            <img class="sousya" src = "img/hibiki.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>HIBIKI</h3></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="rum">
+                        <a href="chris.html">
+                            <img class="sousya" src = "img/chris.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>CHRIS</h3></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="rum">
+                        <a href="sakimori.html">
+                            <img class="sousya" src = "img/sakimori.png"/>
+                        </a>
+                    </div>
+                    <div style="color:white"><h3>SAKIMORI(TSUBASA)</h3></div>
+                </div>
+-->
+<!--
+            <div class="name" id="center-border">Others</div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="kanade.html">
+                        <img class="sousya" src="img/kanade.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>KANADE</h3></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="393.html">
+                        <img class="sousya" src="img/393.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>MIKU</h3></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="carol.html">
+                        <img class="sousya" src="img/carol.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>CAROL</h3></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="otona.html">
+                        <img class="sousya" src="img/otona.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>OTONAs</h3></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="constructing.html">
+                        <img class="sousya" src="img/3nin.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>CLASSMATES</h3></div>
+            </div>
+            <div class="col-sm-2">
+                <div class="rum">
+                    <a href="constructing.html">
+                        <img class="sousya" src="img/fine.png" />
+                    </a>
+                </div>
+                <div style="color:white">
+                    <h3>FINE</h3></div>
+            </div>
+-->
+        </div>
+    </div>
+</body>
+
+</html>
