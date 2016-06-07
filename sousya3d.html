@@ -12,48 +12,118 @@
     <script src="scripts/jquery.mousewheel.js"></script>
     <script type="text/javascript">
         $(() => {
-            $("#carousel").Cloud9Carousel({
-                xOrigin: 0
-                , xRadius: 600
-                , yOrigin: 42
-                , yRadius: 48
-                , autoPlay: 0
-                , speed: 10
-                , bringToFront: true
-                , onRendered: rendered
-                , autoPlayDelay: 1000
-                , mouseWheel: true
-            })
+            var selectedid = 0;
+            var prev = -1;
+            var aboutshown = false;
 
-            function rendered(carousel) {
-                for (var i = 0; i < 11; i++) {
-                    var myimg = carousel.items[i].element.children;
-                    if (i == carousel.nearestIndex()) {
-                        $(myimg).css({
-                            "-webkit-filter": "grayscale(0%)"
-                            , "animation": "rumble 0.07s linear infinite"
-                        });
-                    } else {
-                        $(myimg).css({
-                            "-webkit-filter": "grayscale(100%)"
-                            , "animation": ""
-                        });
+            function SetCarousel(selectid, can) {
+                $("#carousel").Cloud9Carousel({
+                    xOrigin: 0
+                    , xRadius: 600
+                    , yOrigin: 42
+                    , yRadius: 48
+                    , autoPlay: 0
+                    , speed: 10
+                    , bringToFront: true
+                    , onLoaded: function (carousel) {
+                        carousel.go(-3);
                     }
-                }
-                $('.name-big').text(carousel.nearestItem().element.title);
+                    , onRendered: rendered
+                    , autoPlayDelay: 1000
+                    , mouseWheel: true
+                });
             }
 
-            $("#CharaButton").click(() => {
+            function rendered(carousel) {
+                now = carousel.nearestIndex();
+                if (selectedid == now) {} else {
+                    selectedid = carousel.nearestIndex();
+                    for (var i = 0; i < 11; i++) {
+                        var myimg = carousel.items[i].element.children;
+                        if (i == selectedid) {
+                            $(myimg).css({
+                                "-webkit-filter": "grayscale(0%)"
+                                , "animation": "rumble 0.07s linear infinite"
+                            });
+                        } else {
+                            $(myimg).css({
+                                "-webkit-filter": "grayscale(100%)"
+                                , "animation": ""
+                            });
+                        }
+                    }
+                    $('.name-big').text(carousel.nearestItem().element.title);
+                    if (aboutshown == true) {
+                        GetAbout(selectedid);
+                    }
+                }
+            }
+
+            function GetAbout(index) {
+                var url = "";
+                switch (index) {
+                case 0:
+                    url = "maria.html"
+                    break;
+                case 1:
+                    url = "kirishira.html"
+                    break;
+                case 2:
+                    url = "kirishira.html"
+                    break;
+                case 3:
+                    url = "hibiki.html"
+                    break;
+                case 4:
+                    url = "chris.html"
+                    break;
+                case 5:
+                    url = "sakimori.html"
+                    break;
+                case 6:
+                    url = "393.html"
+                    break;
+                case 7:
+                    url = "carol.html"
+                    break;
+                case 8:
+                    url = "otona.html"
+                    break;
+                case 9:
+                    url = "kanade.html"
+                    break;
+                case 10:
+                    //暫定的に
+                    url = "kanade.html"
+                    break;
+                }
                 $.ajax({
-                    url: "maria.html"
+                    url: url
                 , }).then(
                     function (data) {
+                        $("#aboutspace").empty(out_html);
                         var out_html = $(data).find("#about");
                         $("#aboutspace").append(out_html);
-                        $("#aboutspace").find(".col-sm-8").removeClass(".col-sm-8");
-                        $("#aboutspace").animate({width: 'toggle'}, 300);
+                        document.getElementById("about").className = "col-sm-12";
                     }
                 );
+            }
+
+            SetCarousel(0, true);
+
+            $("#CharaButton").click(() => {
+                console.log(aboutshown);
+                if (aboutshown == false) {
+                    GetAbout(selectedid);
+                    aboutshown = true;
+                    $("#CharaButton").text("CLOSE");
+                } else {
+                    aboutshown = false;
+                    $("#CharaButton").text("ABOUT");
+                }
+                $("#aboutspace").animate({
+                    width: 'toggle'
+                }, 300);
             });
         })
     </script>
@@ -75,11 +145,14 @@
             float: right;
             display: none;
             font-size: xx-large;
+            margin-right: 0%; 
+            padding-left:5%;
+            margin-top: 1%;
         }
     </style>
 </head>
 
-<body id="ikusaba">
+<body id="ikusaba" style="overflow:scroll;">
     <div class="container" id="centering"><img id="titlelogo" src="img/title.PNG" />
         <nav class="navbar navbar-default" id="topbar">
             <div class="container">
@@ -94,60 +167,48 @@
         </nav>
         <div class="row" id="ikusaba-inner">
             <div class="name" id="center-border">CHARACTERS</div>
-            <div id="aboutspace"></div>
             <!-- The carousel wrapper. -->
             <div>
-            <div id="carousel">
-                <div class="cloud9-item" title="MARIA">
-                    <a href="maria.html">
+                <div class="container" style="vertical-align:bottom;">
+                    <div class="name-big" style="display:inline-block;vertical-align:bottom;">CHARACTER NAME</div>
+                    <button type="button" id="CharaButton" class="btn btn-warning" style="font-size:200%;width = 200%;background-color:coral;display:inline-block;vertical-align:bottom;margin-left:1em;">ABOUT</button>
+                </div>
+                <div id="aboutspace"></div>
+                <div id="carousel">
+                    <div class="cloud9-item" title="MARIA">
                         <img src="img/maria.png" alt="MARIA">
-                    </a>
+                    </div>
+                    <div class="cloud9-item" title="KIRIKA">
+                        <img src="img/kirika.png" alt="KIRIKA">
+                    </div>
+                    <div class="cloud9-item" title="SHIRABE">
+                        <img src="img/shirabe.png" alt="SHIRABE">
+                    </div>
+                    <div class="cloud9-item" title="HIBIKI">
+                        <img src="img/hibiki.png" alt="HIBIKI">
+                    </div>
+                    <div class="cloud9-item" title="CHRIS">
+                        <img src="img/chris.png" alt="CHRIS">
+                    </div>
+                    <div class="cloud9-item" title="TSUBASA">
+                        <img src="img/sakimori.png" alt="TSUBASA">
+                    </div>
+                    <div class="cloud9-item" title="MIKU">
+                        <img src="img/393.png" alt="MIKU">
+                    </div>
+                    <div class="cloud9-item" title="CAROL">
+                        <img src="img/carol.png" alt="CAROL">
+                    </div>
+                    <div class="cloud9-item" title="OTONA">
+                        <img src="img/otona.png" alt="OTONA">
+                    </div>
+                    <div class="cloud9-item" title="KANADE">
+                        <img src="img/kanade.png" alt="KANADE">
+                    </div>
+                    <div class="cloud9-item" title="FINE">
+                        <img src="img/fine.png" alt="FINE">
+                    </div>
                 </div>
-                <div class="cloud9-item" title="KIRIKA">
-                    <a href=kirishira.html>
-                        <img src="img/kirika.png" alt="KIRIKA"></a>
-                </div>
-                <div class="cloud9-item" title="SHIRABE">
-                    <a href="kirishira.html">
-                        <img src="img/shirabe.png" alt="SHIRABE"></a>
-                </div>
-                <div class="cloud9-item" title="HIBIKI">
-                    <a href="hibiki.html">
-                        <img src="img/hibiki.png" alt="HIBIKI"></a>
-                </div>
-                <div class="cloud9-item" title="CHRIS">
-                    <a href="chris.html">
-                        <img src="img/chris.png" alt="CHRIS"></a>
-                </div>
-                <div class="cloud9-item" title="TSUBASA">
-                    <a href="sakimori.html">
-                        <img src="img/sakimori.png" alt="TSUBASA"></a>
-                </div>
-                <div class="cloud9-item" title="MIKU">
-                    <a href="393.html">
-                        <img src="img/393.png" alt="MIKU"></a>
-                </div>
-                <div class="cloud9-item" title="CAROL">
-                    <a href="carol.html">
-                        <img src="img/carol.png" alt="CAROL"></a>
-                </div>
-                <div class="cloud9-item" title="OTONA">
-                    <a href="otona.html">
-                        <img src="img/otona.png" alt="OTONA"></a>
-                </div>
-                <div class="cloud9-item" title="KANADE">
-                    <a href="kanade.html">
-                        <img src="img/kanade.png" alt="KANADE"></a>
-                </div>
-                <div class="cloud9-item" title="FINE">
-                    <a href="constructing.html">
-                        <img src="img/fine.png" alt="FINE"></a>
-                </div>
-            </div>
-            <div class="container">
-                <div class="name-big" style="margin-top:2%;">CHARACTER NAME</div>
-                <button type="button" id="CharaButton" class="btn btn-warning" style="font-size:200%;width = 200%;margin-top:1%;background-color:coral;">ABOUT</button>
-            </div>
             </div>
         </div>
     </div>
