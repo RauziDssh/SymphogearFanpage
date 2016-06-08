@@ -1,15 +1,5 @@
-var BT = React.createClass({
-  render:function(){
-    var btnstyle = {
-      color: "red"
-    };
-    return (
-      <button className="btn btn-default" style={btnstyle}/>
-    );
-  }
-});
-
 var songdata;
+
 $(() => {
     $.ajaxSetup({ async: false });
     $.getJSON("data.json",(data) => {songdata = data;});
