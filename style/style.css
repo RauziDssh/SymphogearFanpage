@@ -40,6 +40,7 @@
 }
 
 #ikusaba{
+    height: 200%;
     text-align: center;
     background-image: url("../img/background.jpg");
     background-repeat:no-repeat;

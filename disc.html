@@ -6,9 +6,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="http://fb.me/react-0.13.3.js"></script>
     <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx" src="scripts/disc.js"></script>
+    <style>
+        #ikusaba-inner {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    </style>
 </head>
 
 <body id="ikusaba">
@@ -20,13 +27,56 @@
                     <li><a href="./index.html">戦姫絶唱シンフォギアとは？</a></li>
                     <li><a href="./story.html">ストーリー</a></li>
                     <li><a href="./sousya.html">キャラクター</a></li>
-                    <li><a href="./constructing.html">ディスコグラフィー</a></li>
+                   <li><a href="./disc.html">DISC</a></li>
                     <li><a href="https://twitter.com/symphogear?lang=ja">Twitter</a></li>
                 </ul>
             </div>
         </nav>
         <div class="row" id="ikusaba-inner">
-            test
+            <div className="container">
+                <ul class="list-group">
+                    <li class="list-group-item row">
+                        <div class="col-xs-6">
+                            TITLE
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label" for="usage1select2">SINGER</label>
+                                <select class="form-control" id="singerselect">
+                                    <option value="ALL">ALL</option>
+                                    <option value="響">響</option>
+                                    <option value="奏">奏</option>
+                                    <option value="翼">翼</option>
+                                    <option value="クリス">クリス</option>
+                                    <option value="マリア">マリア</option>
+                                    <option value="切歌">切歌</option>
+                                    <option value="調">調</option>
+                                    <option value="未来">未来</option>
+                                    <option value="セレナ">セレナ</option>
+                                    <option value="キャロル">キャロル</option>
+                                    <option value="弓美">弓美</option>
+                                    <option value="詩織">詩織</option>
+                                    <option value="創世">創世</option>
+                                    <option value="弦十郎">弦十郎</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="form-group">
+                                <label class="control-label" for="usage1select2">SEASON</label>
+                                <select class="form-control" id="seasonselect">
+                                    <option value='ALL'>ALL</option>
+                                    <option value='無印'>無印</option>
+                                    <option value='G'>G</option>
+                                    <option value='GX'>GX</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="songlist">
+                </div>
+            </div>
         </div>
     </div>
 </body>
