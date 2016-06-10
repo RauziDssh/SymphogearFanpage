@@ -111,6 +111,7 @@
 }
 
 .name{
+    width: auto;
     font-size: 30px;
     color: white;
     text-align: left;
